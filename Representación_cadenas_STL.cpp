@@ -2,22 +2,28 @@
 #include <string>
 
 int main() {
-    std::string sentence = "OpenAI is a leading AI research lab.";
+    std::string phrase = "Hello, World!";
 
-    std::cout << "Frase: " << sentence << std::endl;
-    std::cout << "Tamaño de la cadena: " << sentence.size() << " caracteres." << std::endl;
+    std::cout << "Frase original: " << phrase << std::endl;
 
-    std::cout << "¿La cadena está vacía? " << (sentence.empty() ? "Sí" : "No") << std::endl;
+    std::cout << "Longitud de la cadena: " << phrase.size() << " caracteres." << std::endl;
 
-    std::cout << "Primer caracter: " << sentence[0] << std::endl;
-    std::cout << "Último caracter: " << sentence[sentence.size() - 1] << std::endl;
+    std::cout << "¿La cadena está vacía? " << (phrase.empty() ? "Sí" : "No") << std::endl;
 
-    sentence += " They focus on advancing AI for the benefit of all humanity.";
+    std::cout << "Primer caracter: " << phrase[0] << std::endl;
+    phrase[7] = ','; // Modificar el espacio por una coma
+    std::cout << "Frase modificada: " << phrase << std::endl;
 
-    std::cout << "Frase actualizada: " << sentence << std::endl;
+    phrase += " Welcome to the world of C++!";
+    std::cout << "Frase actualizada: " << phrase << std::endl;
 
-    std::string subSentence = sentence.substr(23, 15);
-    std::cout << "Subcadena: " << subSentence << std::endl;
+    std::string subString = "World";
+    size_t found = phrase.find(subString);
+    if (found != std::string::npos) {
+        std::cout << "La subcadena '" << subString << "' comienza en la posición " << found << std::endl;
+    } else {
+        std::cout << "La subcadena '" << subString << "' no se encontró en la frase." << std::endl;
+    }
 
     return 0;
 }
